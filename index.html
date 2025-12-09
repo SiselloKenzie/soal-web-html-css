@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Soal Web</title>
+</head>
+<body>
+    <header>
+        <h1>Soal Web RPL</h1>
+    </header>
+    <div class="content">
+        <p>Halaman ini berisi pertanyaan untuk mata pelajaran RPL. Semoga beruntung!</p>
+        </div>
+
+        <div class="button-container">
+        </div>
+        <div class="quiz-container">
+            <h2>Pertanyaan:</h2>
+            <p>Jawab pertanyaan berikut berdasarkan halaman web yang Anda lihat:</p>
+            
+            <form id="quizForm">
+                <label for="question1">1. Apa yang terjadi ketika Anda mengklik tombol "Ubah Warna Latar"?</label><br>
+                <textarea id="question1" name="question1" rows="4" cols="50" placeholder="Tulis jawaban Anda di sini..."></textarea><br><br>
+
+                <label for="question2">2. Apa fungsi dari tag <code>&lt;link&gt;</code> dalam file HTML?</label><br>
+                <textarea id="question2" name="question2" rows="4" cols="50" placeholder="Tulis jawaban Anda di sini..."></textarea><br><br>
+
+                <label for="question3">3. Jelaskan fungsi dari CSS berikut: <code>max-width: 100%;</code> pada gambar.</label><br>
+                <textarea id="question3" name="question3" rows="4" cols="50" placeholder="Tulis jawaban Anda di sini..."></textarea><br><br>
+
+                <button type="button" onclick="submitQuiz()">Kirim Jawaban</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function changeBackgroundColor() {
+            let colors = ["#f4f4f4", "#e0f7fa", "#ffccbc", "#c8e6c9", "#fff59d"];
+            let randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+        function submitQuiz() {
+            let question1 = document.getElementById('question1').value;
+            let question2 = document.getElementById('question2').value;
+            let question3 = document.getElementById('question3').value;
+
+            if (question1 && question2 && question3) {
+                alert("Jawaban sudah terkirim.");
+            } else {
+                alert("Harap jawab dan pastikan semua jawaban sudah diperiksa dan benar");
+            }
+        }
+    </script>
+</body>
+</html>
